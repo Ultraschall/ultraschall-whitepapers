@@ -1,0 +1,474 @@
+{
+    "$schema": "http://json-schema.org/draft-06/schema#",
+    "$id": "https://ultraschall.fm/schema/PodMeta/v1.json",
+    "$ref": "#/definitions/PodMeta",
+    "definitions": {
+        "PodMeta": {
+            "title": "PodMeta root",
+            "description": "",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "$schema": {
+                    "type": "string",
+                },
+                "podcast": {
+                    "$ref": "#/definitions/Podcast"
+                },
+                "episode": {
+                    "$ref": "#/definitions/Episode"
+                },
+                "contributors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Contributor"
+                    }
+                },
+                "chapters": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Chapter"
+                    }
+                },
+                "shownotes": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Shownote"
+                    }
+                },
+                "transcripts": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Transcript"
+                    }
+                }
+            },
+            "required": [
+                "$schema",
+                "chapters",
+                "contributors",
+                "episode",
+                "podcast",
+                "shownotes",
+                "transcripts"
+            ]
+        },
+        "Podcast": {
+            "title": "Podcast",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "tagline": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "category": {
+                    "type": "string"
+                },
+                "contact_email": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "feed": {
+                    "type": "string"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/LinkElement"
+                    }
+                }
+            },
+            "required": [
+                "category",
+                "contact_email",
+                "description",
+                "feed",
+                "keywords",
+                "links",
+                "tagline",
+                "title"
+            ]
+        },
+        "Episode": {
+            "title": "Episode",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "title": {
+                    "type": "string"
+                },
+                "number": {
+                    "type": "string"
+                },
+                "season": {
+                    "type": "string"
+                },
+                "release_date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "language": {
+                    "type": "string"
+                },
+                "explicit": {
+                    "type": "boolean"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "notification_keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "alternate_ids": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "guid",
+                "keywords",
+                "language",
+                "release_date",
+                "title"
+            ]
+        },
+        "Chapter": {
+            "title": "Chapter",
+            "description": "",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "guid": {
+                    "type": "string",
+                    "format": "uuid"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string",
+                    "format": "time"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "is_advertisement": {
+                    "type": "boolean"
+                },
+                "content_notification_tags": {
+                    "type": "string"
+                },
+                "spoiler_alert": {
+                    "type": "boolean"
+                },
+                "next_chapter_numbers": {
+                    "type": "string"
+                },
+                "previous_chapter_numbers": {
+                    "type": "string"
+                },
+                "image": {
+                    "$ref": "#/definitions/Image"
+                },
+                "link": {
+                    "$ref": "#/definitions/Link"
+                }
+            },
+            "required": [
+                "content_notification_tags",
+                "description",
+                "guid",
+                "keywords",
+                "next_chapter_numbers",
+                "position",
+                "previous_chapter_numbers",
+                "title"
+            ]
+        },
+        "Contributor": {
+            "title": "Contributor",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "email": {
+                    "type": "string"
+                },
+                "role": {
+                    "type": "string"
+                },
+                "guid": {
+                    "type": "string"
+                },
+                "links": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Link"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "email",
+                "guid",
+                "links",
+                "name",
+                "role"
+            ]
+        },
+        "ContributorReference": {
+            "title": "ContributorReference",
+            "type": "object",
+            "properties": {
+                "guid": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "guid"
+            ]
+        },
+        "Image": {
+            "title": "Image",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "license": {
+                    "type": "string"
+                },
+                "origin": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "license",
+                "origin",
+                "url"
+            ]
+        },
+        "Link": {
+            "title": "Link",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "url"
+            ]
+        },
+        "Shownote": {
+            "title": "Shownote",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "guid": {
+                    "type": "string"
+                },
+                "title": {
+                    "type": "string"
+                },
+                "position": {
+                    "type": "string",
+                    "format": "time"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "location": {
+                    "$ref": "#/definitions/LocationUnion"
+                },
+                "date": {
+                    "type": "string"
+                },
+                "event": {
+                    "$ref": "#/definitions/Event"
+                },
+                "bibliographical_source": {
+                    "type": "string"
+                },
+                "link": {
+                    "$ref": "#/definitions/ShownoteLink"
+                },
+                "wikidata_uri": {
+                    "type": "string"
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {
+                        "type": "string"
+                    }
+                },
+                "is_advertisement": {
+                    "type": "boolean"
+                },
+                "linked_audiovideomedia": {
+                    "type": "string"
+                },
+                "location_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "guid",
+                "title",
+                "description"
+            ]
+        },
+        "ShownoteLink": {
+            "title": "ShownoteLink",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "url": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "retrieval_date": {
+                    "type": "string",
+                    "format": "date-time"
+                },
+                "archived_copy_of_original_url": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "archived_copy_of_original_url",
+                "description",
+                "retrieval_date",
+                "url"
+            ]
+        },
+        "Event": {
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "start": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "end": {
+                    "type": "string",
+                    "format": "datetime"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "url": {
+                    "type": "string",
+                    "format": "uri"
+                },
+                "location": {
+                    "type": "string"
+                },
+                "geolocation": {
+                    "type": "array",
+                    "items": {
+                        "type": "number"
+                    }
+                },
+                "ics_data": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "description",
+                "end",
+                "ics_data",
+                "location",
+                "name",
+                "start"
+            ],
+            "title": "Event"
+        },
+        "Transcript": {
+            "title": "Transcript",
+            "type": "object",
+            "additionalProperties": false,
+            "properties": {
+                "guid": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "transcript_webvtt": {
+                    "type": "string"
+                },
+                "contributors": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/ContributorReference"
+                    }
+                }
+            },
+            "required": [
+                "description",
+                "guid",
+                "name",
+                "transcript_webvtt"
+            ]
+        }
+    }
+}
