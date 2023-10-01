@@ -1,0 +1,29 @@
+{
+    "title": "Ein Blick auf die Publisher Beta 4",
+    "subtitle": "Eine neue Version in den Startlöchern",
+    "summary": "Der Podlovers-Podcast meldet sich zurück. Alex, Dirk, Eric und Martin geben Euch einen Einblick in die Beta der neuen Version und stellen die wichtigsten Neuerungen vor. Hört rein und testet dann gerne mit.",
+    "number": "23",
+    "release_date": "20230730T18:22:17+02:00",
+    "language": "de",
+    "explicit": "no",
+    "contributors": [
+        {
+            "name": "Dirk",
+            "description": "Developer",
+            "role": "Host"
+        },
+        {
+            "name": "Eric",
+            "description": "Developer",
+            "role": "Host"
+        }
+    ],
+    "shownotes": [
+        {
+            "title": "Install Podlove Publisher Beta",
+            "description": "How to install the beta",
+            "timestamp": "00:04:23",
+            "url": "https://www.youtube.com/watch?v=lMHFyHPMn4Q"
+        }
+    ]
+}

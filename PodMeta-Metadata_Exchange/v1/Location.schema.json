@@ -1,0 +1,16 @@
+{
+  "$id": "https://example.com/location.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Location",
+  "type": "object",
+  "description": "Location JSON Schema\n\nThis implemented a json schema from the podcastindex.org location proposal\n\nSee https://github.com/Podcastindex-org/podcast-namespace/blob/main/chapters/jsonChapters.md",
+  "examples": [],
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "geo": {
+      "type": "string"
+    }
+  }
+}

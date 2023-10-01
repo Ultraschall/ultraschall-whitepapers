@@ -1,0 +1,18 @@
+{
+    "title": "Podlovers",
+    "subtitle": "",
+    "description": "Der Podlove Entwickler:innen Podcast",
+    "mail": "test@example.com",
+    "website" : [
+        {
+            "name" : "homepage",
+            "description" : "Homepage podlovers",
+            "url" : "https://podlovers,org"
+        },
+        {
+            "name" : "podlove",
+            "description": "Podlove Homepage",
+            "url" : "https://podlove.org"
+        }
+    ]
+}

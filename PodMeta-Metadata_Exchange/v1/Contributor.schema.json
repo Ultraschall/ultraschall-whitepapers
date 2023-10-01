@@ -1,0 +1,38 @@
+{
+  "$id": "https://example.com/contributor.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Contributor",
+  "type": "object",
+  "description": "Contributor JSON Schema",
+  "properties": {
+    "name": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "role": {
+      "type": "string"
+    },
+    "website": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string"
+          },
+          "description": {
+            "type": "string"
+          },
+          "url": {
+            "type": "string"
+          }
+        }
+      }
+    }
+  }
+}

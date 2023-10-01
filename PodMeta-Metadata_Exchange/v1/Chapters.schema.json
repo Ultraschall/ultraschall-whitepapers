@@ -1,0 +1,54 @@
+{
+  "$id": "https://example.com/chapters.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Chapters",
+  "type": "object",
+  "description": "Chapters JSON Schema\n\nThis implemented a json schema from the podcastindex.org chapters proposal\n\nSee https://github.com/Podcastindex-org/podcast-namespace/blob/main/chapters/jsonChapters.md",
+  "examples": [],
+  "properties": {
+    "version": {
+      "type": "string",
+      "default": "1.2.0",
+      "description": "The version number of the format being used"
+    },
+    "chapters": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "": {
+            "$ref": "/Chapter.schema",
+            "description": "An array of chapter objects defined below"
+          }
+        }
+      }
+    },
+    "author": {
+      "type": "string",
+      "description": "The name of the author of this podcast episode."
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of this podcast episode."
+    },
+    "podcastName": {
+      "type": "string",
+      "description": "The name of the podcast this episode belongs to."
+    },
+    "description": {
+      "type": "string",
+      "description": "A description of this episode."
+    },
+    "fileName": {
+      "type": "string",
+      "description": "The name of the audio file these chapters apply to."
+    },
+    "waypoints": {
+      "type": "boolean",
+      "description": "If this property is present, the locations in a chapter object should be displayed with a route between locations."
+    }
+  },
+  "required": [
+    "version"
+  ]
+}

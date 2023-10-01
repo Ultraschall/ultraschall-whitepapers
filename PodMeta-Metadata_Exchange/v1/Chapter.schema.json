@@ -1,0 +1,41 @@
+{
+  "$id": "https://example.com/chapter.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Chapter",
+  "type": "object",
+  "description": "Chapter JSON Schema\n\nThis implemented a json schema from the podcastindex.org chapters proposal\n\nSee https://github.com/Podcastindex-org/podcast-namespace/blob/main/chapters/jsonChapters.md",
+  "examples": [],
+  "properties": {
+    "starttime": {
+      "type": "number",
+      "description": "The starting time of the chapter, expressed in seconds with float precision for fractions of a second."
+    },
+    "title": {
+      "type": "string",
+      "description": "The title of this chapter."
+    },
+    "img": {
+      "type": "string",
+      "description": "The url of an image to use as chapter art."
+    },
+    "url": {
+      "type": "string",
+      "description": "The url of a web page or supporting document that's related to the topic of this chapter."
+    },
+    "toc": {
+      "type": "boolean",
+      "description": "If this property is present and set to false, this chapter should not display visibly to the user in either the table of contents or as a jump-to point in the user interface. It should be considered a \"silent\" chapter marker for the purpose of meta-data only. If this property is set to true or not present at all, this should be considered a normal chapter for display to the user. The name \"toc\" is short for \"table of contents\"."
+    },
+    "endtime": {
+      "type": "number",
+      "description": "The end time of the chapter, expressed in seconds with float precision for fractions of a second."
+    },
+    "location": {
+      "$ref": "/Location.schema",
+      "description": "This object defines an optional location that is tied to this chapter. It follows the structure of the location tag in the XML namespace."
+    }
+  },
+  "required": [
+    "starttime"
+  ]
+}

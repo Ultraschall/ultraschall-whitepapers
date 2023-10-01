@@ -1,0 +1,30 @@
+{
+  "$id": "https://example.com/transcripts.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Transcripts",
+  "type": "object",
+  "description": "Trascripts JSON Schema\n\nThis implemented a json schema from the podcastindex.org transcripts proposal\n\nSee https://github.com/Podcastindex-org/podcast-namespace/blob/main/transcripts/transcripts.md",
+  "examples": [],
+  "properties": {
+    "version": {
+      "type": "string"
+    },
+    "segments": {
+      "type": "object",
+      "properties": {
+        "speaker": {
+          "type": "string"
+        },
+        "startTime": {
+          "type": "string"
+        },
+        "endTime": {
+          "type": "string"
+        },
+        "body": {
+          "type": "string"
+        }
+      }
+    }
+  }
+}
