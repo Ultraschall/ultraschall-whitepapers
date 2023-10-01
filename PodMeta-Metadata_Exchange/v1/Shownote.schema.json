@@ -1,0 +1,32 @@
+{
+  "$id": "https://example.com/shownote.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Shownote",
+  "type": "object",
+  "description": "Shownote JSON Schema",
+  "examples": [],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "description": {
+      "type": "string"
+    },
+    "location": {
+      "$ref": "/Location.schema"
+    },
+    "timestamp": {
+      "type": "string",
+      "description": "use NormalPlayTime (hh:mm:ss.ms)"
+    },
+    "url": {
+      "type": "string"
+    },
+    "is_advertisement": {
+      "type": "boolean"
+    },
+    "uuid": {
+      "type": "string"
+    }
+  }
+}

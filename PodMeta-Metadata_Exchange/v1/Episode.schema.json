@@ -1,0 +1,60 @@
+{
+  "$id": "https://example.com/episode.schema.json",
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "Episode",
+  "type": "object",
+  "description": "Episode JSON Schema",
+  "examples": [],
+  "properties": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "summary": {
+      "type": "string"
+    },
+    "number": {
+      "type": "string"
+    },
+    "season": {
+      "type": "string"
+    },
+    "release_date": {
+      "type": "string",
+      "description": "ISO 8061 (see https://de.wikipedia.org/wiki/ISO_8601)"
+    },
+    "language": {
+      "type": "string"
+    },
+    "explicit": {
+      "type": "string"
+    },
+    "uuid": {
+      "type": "string"
+    },
+    "shownotes": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "shownotes": {
+            "$ref": "/Shownote.schema"
+          }
+        }
+      }
+    },
+    "contributors": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "properties": {
+          "contributors": {
+            "$ref": "/Contributor.schema"
+          }
+        }
+      }
+    }
+  }
+}
